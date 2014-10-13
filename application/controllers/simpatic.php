@@ -6,6 +6,8 @@ class Simpatic extends CI_Controller {
 		
 		parent::__construct();
 		$this->config->load('codeigniterhelloworld');
+
+		$this->load->helper('url');
 	}
 		
 	 public function index()
@@ -15,7 +17,16 @@ class Simpatic extends CI_Controller {
        
        public function form_exemple() {
            $data= array();
-                     
+             
+           $data= ['firstname'] = "";
+           $data= ['laststname'] = "";
+
+           if ( isset($_POST) )   {
+           		$data['firstname'] = $this->input->get_post("firstname");
+           		$data['lastname'] = $this->input->get_post("lastname");
+           }
+
+
            $this->load->view('form_exemple',$data);
            
         }
