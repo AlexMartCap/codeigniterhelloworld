@@ -16,18 +16,20 @@ class Simpatic extends CI_Controller {
         public function grettings_2() {
               $data= array();
            
-               $nom = $this->input->get_post('nom');
+              //var_export($_POST);
+           
+              $nom = $this->input->get_post('nom');
             
-               $data['nom'] = $nom;
+              $data['nom'] = $nom;
                  
-               $this->load->view('grettings',$data);
+              $this->load->view('grettings',$data);
         }
         	
 	public function grettings($name)
 		$data= array();
 		
 		$data['parametre1']=$name;
-		$data['parametre2']=$name;
+		$data['parametre2']=$this->config->item('academin_person');
 		
 		$this->load->view('grettings',$data);
 	}
