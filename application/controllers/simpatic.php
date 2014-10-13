@@ -5,7 +5,7 @@ class Simpatic extends CI_Controller {
 	function __construct();
 		
 		parent::__construct();
-		$this->config->load('html/codeigniterhelloworld');
+		$this->config->load('codeigniterhelloworld');
 	}
 		
 	 public function index()
