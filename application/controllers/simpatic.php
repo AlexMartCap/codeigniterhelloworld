@@ -16,7 +16,11 @@ class Simpatic extends CI_Controller {
         public function grettings_2() {
               $data= array();
            
+              //echo $_GET;
+              
               //var_export($_POST);
+              //printf_r($_GET);
+              var_dump($_GET);
            
               $nom = $this->input->get_post('nom');
             
@@ -28,7 +32,7 @@ class Simpatic extends CI_Controller {
 	public function grettings($name)
 		$data= array();
 		
-		$data['parametre1']=$name;
+		$data['parametre1']=$this->input->get('parametre1');
 		$data['parametre2']=$this->config->item('academin_person');
 		
 		$this->load->view('grettings',$data);
