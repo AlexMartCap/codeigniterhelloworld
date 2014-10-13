@@ -5,13 +5,20 @@ class Simpatic extends CI_Controller {
 	function __construct();
 		
 		parent::__construct();
-		$this->config->load('codeigniterhelloworld');
+		$this->config->load('html/codeigniterhelloworld');
 	}
 		
 	 public function index()
 	{
 		$this->grettings('mon');
 	}
+       
+       public function form_exemple() {
+           $data= array();
+                     
+           $this->load->view('form_exemple',$data);
+           
+        }
         
         public function grettings_2() {
               $data= array();
